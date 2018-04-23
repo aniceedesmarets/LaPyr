@@ -79,9 +79,7 @@
   <ItemGroup>
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Action_Tache.cs" />
-    <Compile Include="Models\Alerte.cs" />
-    <Compile Include="Models\Analyse.cs" />
-    <Compile Include="Models\BddLiaison.cs" />
+    <Compile Include="Models\ADO.cs" />
     <Compile Include="Models\Categorie.cs" />
     <Compile Include="Models\Detection.cs" />
     <Compile Include="Models\Famille.cs" />
@@ -90,7 +88,6 @@
     <Compile Include="Models\Reglementation.cs" />
     <Compile Include="Models\Salarie_Action.cs" />
     <Compile Include="Models\Site.cs" />
-    <Compile Include="Models\sysdiagram.cs" />
     <Compile Include="Models\Tache.cs" />
     <Compile Include="Models\Verification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,6 +119,9 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

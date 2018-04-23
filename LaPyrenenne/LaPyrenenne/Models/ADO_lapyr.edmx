@@ -1,0 +1,926 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="lapyrModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="idAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dateDebut" Type="datetime" />
+          <Property Name="delais" Type="float" />
+          <Property Name="acheve" Type="float" />
+          <Property Name="numeroImportance" Type="int" />
+          <Property Name="dateFin" Type="datetime" />
+          <Property Name="pieceJustificative" Type="varchar" MaxLength="50" />
+          <Property Name="nom" Type="varchar" MaxLength="50" />
+          <Property Name="recurrence" Type="varchar" MaxLength="50" />
+          <Property Name="idFamille" Type="int" />
+          <Property Name="idVerification" Type="int" />
+          <Property Name="idSite" Type="int" />
+          <Property Name="idAction_1" Type="int" />
+        </EntityType>
+        <EntityType Name="Action_Tache">
+          <Key>
+            <PropertyRef Name="idTache" />
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="detail" Type="varchar" MaxLength="200" />
+          <Property Name="fait" Type="bit" />
+          <Property Name="idTache" Type="int" Nullable="false" />
+          <Property Name="idAction" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="idCategorie" />
+          </Key>
+          <Property Name="idCategorie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Detection">
+          <Key>
+            <PropertyRef Name="idDetection" />
+          </Key>
+          <Property Name="idDetection" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomDetection" Type="varchar" MaxLength="50" />
+          <Property Name="detailDetection" Type="varchar" MaxLength="200" />
+          <Property Name="descriptionAnalyse" Type="varchar" MaxLength="200" />
+          <Property Name="conclusionAnalyse" Type="varchar" MaxLength="200" />
+          <Property Name="idAction" Type="int" />
+        </EntityType>
+        <EntityType Name="Detection_Reglementation">
+          <Key>
+            <PropertyRef Name="idReglementation" />
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="idReglementation" Type="int" Nullable="false" />
+          <Property Name="idAction" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Famille">
+          <Key>
+            <PropertyRef Name="idFamille" />
+          </Key>
+          <Property Name="idFamille" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="QSE">
+          <Key>
+            <PropertyRef Name="idSalarie" />
+          </Key>
+          <Property Name="idSalarie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" />
+          <Property Name="statutHierarchique" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="tel" Type="varchar" MaxLength="10" />
+          <Property Name="prenom" Type="varchar" MaxLength="50" />
+          <Property Name="identifiant" Type="varchar" MaxLength="50" />
+          <Property Name="mdp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="idQuestion" />
+          </Key>
+          <Property Name="idQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="question" Type="varchar" MaxLength="100" />
+          <Property Name="detail" Type="varchar" MaxLength="200" />
+          <Property Name="pointOui" Type="float" />
+          <Property Name="pointNon" Type="float" />
+        </EntityType>
+        <EntityType Name="Questionnaire">
+          <Key>
+            <PropertyRef Name="idVerification" />
+            <PropertyRef Name="idQuestion" />
+          </Key>
+          <Property Name="idVerification" Type="int" Nullable="false" />
+          <Property Name="idQuestion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reglementation">
+          <Key>
+            <PropertyRef Name="idReglementation" />
+          </Key>
+          <Property Name="idReglementation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="designation" Type="varchar" MaxLength="200" />
+          <Property Name="lien" Type="varchar" MaxLength="200" />
+          <Property Name="idCategorie" Type="int" />
+        </EntityType>
+        <EntityType Name="Salarie_Action">
+          <Key>
+            <PropertyRef Name="idSalarie" />
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="type" Type="varchar" MaxLength="25" />
+          <Property Name="idSalarie" Type="int" Nullable="false" />
+          <Property Name="idAction" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="idSite" />
+          </Key>
+          <Property Name="idSite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nomSite" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tache">
+          <Key>
+            <PropertyRef Name="idTache" />
+          </Key>
+          <Property Name="idTache" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nom" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Verification">
+          <Key>
+            <PropertyRef Name="idVerification" />
+          </Key>
+          <Property Name="idVerification" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="moyenne" Type="float" />
+          <Property Name="totalPoint" Type="float" />
+          <Property Name="idAction" Type="int" />
+        </EntityType>
+        <Association Name="FK_Action_idAction_1">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Action1" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Action1">
+              <PropertyRef Name="idAction_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idFamille">
+          <End Role="Famille" Type="Self.Famille" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Famille">
+              <PropertyRef Name="idFamille" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idFamille" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idSite">
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="idSite" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idSite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idVerification">
+          <End Role="Verification" Type="Self.Verification" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Verification">
+              <PropertyRef Name="idVerification" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idVerification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Tache_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="Action_Tache" Type="Self.Action_Tache" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Action_Tache">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Tache_idTache">
+          <End Role="Tache" Type="Self.Tache" Multiplicity="1" />
+          <End Role="Action_Tache" Type="Self.Action_Tache" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tache">
+              <PropertyRef Name="idTache" />
+            </Principal>
+            <Dependent Role="Action_Tache">
+              <PropertyRef Name="idTache" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detection_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Detection" Type="Self.Detection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Detection">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detection_Reglementation_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="Detection_Reglementation" Type="Self.Detection_Reglementation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Detection_Reglementation">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detection_Reglementation_idReglementation">
+          <End Role="Reglementation" Type="Self.Reglementation" Multiplicity="1" />
+          <End Role="Detection_Reglementation" Type="Self.Detection_Reglementation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reglementation">
+              <PropertyRef Name="idReglementation" />
+            </Principal>
+            <Dependent Role="Detection_Reglementation">
+              <PropertyRef Name="idReglementation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questionnaire_idQuestion">
+          <End Role="Question" Type="Self.Question" Multiplicity="1" />
+          <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="idQuestion" />
+            </Principal>
+            <Dependent Role="Questionnaire">
+              <PropertyRef Name="idQuestion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questionnaire_idVerification">
+          <End Role="Verification" Type="Self.Verification" Multiplicity="1" />
+          <End Role="Questionnaire" Type="Self.Questionnaire" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Verification">
+              <PropertyRef Name="idVerification" />
+            </Principal>
+            <Dependent Role="Questionnaire">
+              <PropertyRef Name="idVerification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reglementation_idCategorie">
+          <End Role="Categorie" Type="Self.Categorie" Multiplicity="0..1" />
+          <End Role="Reglementation" Type="Self.Reglementation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie">
+              <PropertyRef Name="idCategorie" />
+            </Principal>
+            <Dependent Role="Reglementation">
+              <PropertyRef Name="idCategorie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarie_Action_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="Salarie_Action" Type="Self.Salarie_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Salarie_Action">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarie_Action_idSalarie">
+          <End Role="QSE" Type="Self.QSE" Multiplicity="1" />
+          <End Role="Salarie_Action" Type="Self.Salarie_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QSE">
+              <PropertyRef Name="idSalarie" />
+            </Principal>
+            <Dependent Role="Salarie_Action">
+              <PropertyRef Name="idSalarie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verification_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Verification" Type="Self.Verification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Verification">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="lapyrModelStoreContainer">
+          <EntitySet Name="Action" EntityType="Self.Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Action_Tache" EntityType="Self.Action_Tache" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categorie" EntityType="Self.Categorie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detection" EntityType="Self.Detection" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Detection_Reglementation" EntityType="Self.Detection_Reglementation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Famille" EntityType="Self.Famille" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QSE" EntityType="Self.QSE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questionnaire" EntityType="Self.Questionnaire" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reglementation" EntityType="Self.Reglementation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salarie_Action" EntityType="Self.Salarie_Action" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tache" EntityType="Self.Tache" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Verification" EntityType="Self.Verification" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Action_idAction_1" Association="Self.FK_Action_idAction_1">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Action1" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idFamille" Association="Self.FK_Action_idFamille">
+            <End Role="Famille" EntitySet="Famille" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idSite" Association="Self.FK_Action_idSite">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idVerification" Association="Self.FK_Action_idVerification">
+            <End Role="Verification" EntitySet="Verification" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Tache_idAction" Association="Self.FK_Action_Tache_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Action_Tache" EntitySet="Action_Tache" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Tache_idTache" Association="Self.FK_Action_Tache_idTache">
+            <End Role="Tache" EntitySet="Tache" />
+            <End Role="Action_Tache" EntitySet="Action_Tache" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detection_idAction" Association="Self.FK_Detection_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Detection" EntitySet="Detection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detection_Reglementation_idAction" Association="Self.FK_Detection_Reglementation_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Detection_Reglementation" EntitySet="Detection_Reglementation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detection_Reglementation_idReglementation" Association="Self.FK_Detection_Reglementation_idReglementation">
+            <End Role="Reglementation" EntitySet="Reglementation" />
+            <End Role="Detection_Reglementation" EntitySet="Detection_Reglementation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questionnaire_idQuestion" Association="Self.FK_Questionnaire_idQuestion">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="Questionnaire" EntitySet="Questionnaire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questionnaire_idVerification" Association="Self.FK_Questionnaire_idVerification">
+            <End Role="Verification" EntitySet="Verification" />
+            <End Role="Questionnaire" EntitySet="Questionnaire" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reglementation_idCategorie" Association="Self.FK_Reglementation_idCategorie">
+            <End Role="Categorie" EntitySet="Categorie" />
+            <End Role="Reglementation" EntitySet="Reglementation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarie_Action_idAction" Association="Self.FK_Salarie_Action_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarie_Action_idSalarie" Association="Self.FK_Salarie_Action_idSalarie">
+            <End Role="QSE" EntitySet="QSE" />
+            <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verification_idAction" Association="Self.FK_Verification_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Verification" EntitySet="Verification" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="lapyrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action">
+          <Key>
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="idAction" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dateDebut" Type="DateTime" Precision="3" />
+          <Property Name="delais" Type="Double" />
+          <Property Name="acheve" Type="Double" />
+          <Property Name="numeroImportance" Type="Int32" />
+          <Property Name="dateFin" Type="DateTime" Precision="3" />
+          <Property Name="pieceJustificative" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="recurrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="idFamille" Type="Int32" />
+          <Property Name="idVerification" Type="Int32" />
+          <Property Name="idSite" Type="Int32" />
+          <Property Name="idAction_1" Type="Int32" />
+          <NavigationProperty Name="Action1" Relationship="Self.FK_Action_idAction_1" FromRole="Action" ToRole="Action1" />
+          <NavigationProperty Name="Action2" Relationship="Self.FK_Action_idAction_1" FromRole="Action1" ToRole="Action" />
+          <NavigationProperty Name="Famille" Relationship="Self.FK_Action_idFamille" FromRole="Action" ToRole="Famille" />
+          <NavigationProperty Name="Site" Relationship="Self.FK_Action_idSite" FromRole="Action" ToRole="Site" />
+          <NavigationProperty Name="Verification" Relationship="Self.FK_Action_idVerification" FromRole="Action" ToRole="Verification" />
+          <NavigationProperty Name="Action_Tache" Relationship="Self.FK_Action_Tache_idAction" FromRole="Action" ToRole="Action_Tache" />
+          <NavigationProperty Name="Detection" Relationship="Self.FK_Detection_idAction" FromRole="Action" ToRole="Detection" />
+          <NavigationProperty Name="Salarie_Action" Relationship="Self.FK_Salarie_Action_idAction" FromRole="Action" ToRole="Salarie_Action" />
+          <NavigationProperty Name="Verification1" Relationship="Self.FK_Verification_idAction" FromRole="Action" ToRole="Verification" />
+          <NavigationProperty Name="Reglementation" Relationship="Self.Detection_Reglementation" FromRole="Action" ToRole="Reglementation" />
+        </EntityType>
+        <EntityType Name="Action_Tache">
+          <Key>
+            <PropertyRef Name="idTache" />
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="detail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fait" Type="Boolean" />
+          <Property Name="idTache" Type="Int32" Nullable="false" />
+          <Property Name="idAction" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Action_Tache_idAction" FromRole="Action_Tache" ToRole="Action" />
+          <NavigationProperty Name="Tache" Relationship="Self.FK_Action_Tache_idTache" FromRole="Action_Tache" ToRole="Tache" />
+        </EntityType>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="idCategorie" />
+          </Key>
+          <Property Name="idCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reglementation" Relationship="Self.FK_Reglementation_idCategorie" FromRole="Categorie" ToRole="Reglementation" />
+        </EntityType>
+        <EntityType Name="Detection">
+          <Key>
+            <PropertyRef Name="idDetection" />
+          </Key>
+          <Property Name="idDetection" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomDetection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="detailDetection" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="descriptionAnalyse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="conclusionAnalyse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idAction" Type="Int32" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Detection_idAction" FromRole="Detection" ToRole="Action" />
+        </EntityType>
+        <EntityType Name="Famille">
+          <Key>
+            <PropertyRef Name="idFamille" />
+          </Key>
+          <Property Name="idFamille" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Action_idFamille" FromRole="Famille" ToRole="Action" />
+        </EntityType>
+        <EntityType Name="QSE">
+          <Key>
+            <PropertyRef Name="idSalarie" />
+          </Key>
+          <Property Name="idSalarie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statutHierarchique" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="identifiant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mdp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Salarie_Action" Relationship="Self.FK_Salarie_Action_idSalarie" FromRole="QSE" ToRole="Salarie_Action" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="idQuestion" />
+          </Key>
+          <Property Name="idQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="question1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="detail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="pointOui" Type="Double" />
+          <Property Name="pointNon" Type="Double" />
+          <NavigationProperty Name="Verification" Relationship="Self.Questionnaire" FromRole="Question" ToRole="Verification" />
+        </EntityType>
+        <EntityType Name="Reglementation">
+          <Key>
+            <PropertyRef Name="idReglementation" />
+          </Key>
+          <Property Name="idReglementation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="designation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="lien" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idCategorie" Type="Int32" />
+          <NavigationProperty Name="Categorie" Relationship="Self.FK_Reglementation_idCategorie" FromRole="Reglementation" ToRole="Categorie" />
+          <NavigationProperty Name="Action" Relationship="Self.Detection_Reglementation" FromRole="Reglementation" ToRole="Action" />
+        </EntityType>
+        <EntityType Name="Salarie_Action">
+          <Key>
+            <PropertyRef Name="idSalarie" />
+            <PropertyRef Name="idAction" />
+          </Key>
+          <Property Name="type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="idSalarie" Type="Int32" Nullable="false" />
+          <Property Name="idAction" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Salarie_Action_idAction" FromRole="Salarie_Action" ToRole="Action" />
+          <NavigationProperty Name="QSE" Relationship="Self.FK_Salarie_Action_idSalarie" FromRole="Salarie_Action" ToRole="QSE" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="idSite" />
+          </Key>
+          <Property Name="idSite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nomSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Action_idSite" FromRole="Site" ToRole="Action" />
+        </EntityType>
+        <EntityType Name="Tache">
+          <Key>
+            <PropertyRef Name="idTache" />
+          </Key>
+          <Property Name="idTache" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Action_Tache" Relationship="Self.FK_Action_Tache_idTache" FromRole="Tache" ToRole="Action_Tache" />
+        </EntityType>
+        <EntityType Name="Verification">
+          <Key>
+            <PropertyRef Name="idVerification" />
+          </Key>
+          <Property Name="idVerification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="moyenne" Type="Double" />
+          <Property Name="totalPoint" Type="Double" />
+          <Property Name="idAction" Type="Int32" />
+          <NavigationProperty Name="Action" Relationship="Self.FK_Action_idVerification" FromRole="Verification" ToRole="Action" />
+          <NavigationProperty Name="Action1" Relationship="Self.FK_Verification_idAction" FromRole="Verification" ToRole="Action" />
+          <NavigationProperty Name="Question" Relationship="Self.Questionnaire" FromRole="Verification" ToRole="Question" />
+        </EntityType>
+        <Association Name="FK_Action_idAction_1">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Action1" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Action1">
+              <PropertyRef Name="idAction_1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idFamille">
+          <End Role="Famille" Type="Self.Famille" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Famille">
+              <PropertyRef Name="idFamille" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idFamille" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idSite">
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="idSite" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idSite" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_idVerification">
+          <End Role="Verification" Type="Self.Verification" Multiplicity="0..1" />
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Verification">
+              <PropertyRef Name="idVerification" />
+            </Principal>
+            <Dependent Role="Action">
+              <PropertyRef Name="idVerification" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Tache_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="Action_Tache" Type="Self.Action_Tache" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Action_Tache">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Detection_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Detection" Type="Self.Detection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Detection">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarie_Action_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="1" />
+          <End Role="Salarie_Action" Type="Self.Salarie_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Salarie_Action">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Verification_idAction">
+          <End Role="Action" Type="Self.Action" Multiplicity="0..1" />
+          <End Role="Verification" Type="Self.Verification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Action">
+              <PropertyRef Name="idAction" />
+            </Principal>
+            <Dependent Role="Verification">
+              <PropertyRef Name="idAction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Action_Tache_idTache">
+          <End Role="Tache" Type="Self.Tache" Multiplicity="1" />
+          <End Role="Action_Tache" Type="Self.Action_Tache" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tache">
+              <PropertyRef Name="idTache" />
+            </Principal>
+            <Dependent Role="Action_Tache">
+              <PropertyRef Name="idTache" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reglementation_idCategorie">
+          <End Role="Categorie" Type="Self.Categorie" Multiplicity="0..1" />
+          <End Role="Reglementation" Type="Self.Reglementation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorie">
+              <PropertyRef Name="idCategorie" />
+            </Principal>
+            <Dependent Role="Reglementation">
+              <PropertyRef Name="idCategorie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarie_Action_idSalarie">
+          <End Role="QSE" Type="Self.QSE" Multiplicity="1" />
+          <End Role="Salarie_Action" Type="Self.Salarie_Action" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QSE">
+              <PropertyRef Name="idSalarie" />
+            </Principal>
+            <Dependent Role="Salarie_Action">
+              <PropertyRef Name="idSalarie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Detection_Reglementation">
+          <End Role="Action" Type="Self.Action" Multiplicity="*" />
+          <End Role="Reglementation" Type="Self.Reglementation" Multiplicity="*" />
+        </Association>
+        <Association Name="Questionnaire">
+          <End Role="Question" Type="Self.Question" Multiplicity="*" />
+          <End Role="Verification" Type="Self.Verification" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="lapyrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Action" EntityType="Self.Action" />
+          <EntitySet Name="Action_Tache" EntityType="Self.Action_Tache" />
+          <EntitySet Name="Categorie" EntityType="Self.Categorie" />
+          <EntitySet Name="Detection" EntityType="Self.Detection" />
+          <EntitySet Name="Famille" EntityType="Self.Famille" />
+          <EntitySet Name="QSE" EntityType="Self.QSE" />
+          <EntitySet Name="Question" EntityType="Self.Question" />
+          <EntitySet Name="Reglementation" EntityType="Self.Reglementation" />
+          <EntitySet Name="Salarie_Action" EntityType="Self.Salarie_Action" />
+          <EntitySet Name="Site" EntityType="Self.Site" />
+          <EntitySet Name="Tache" EntityType="Self.Tache" />
+          <EntitySet Name="Verification" EntityType="Self.Verification" />
+          <AssociationSet Name="FK_Action_idAction_1" Association="Self.FK_Action_idAction_1">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Action1" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idFamille" Association="Self.FK_Action_idFamille">
+            <End Role="Famille" EntitySet="Famille" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idSite" Association="Self.FK_Action_idSite">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_idVerification" Association="Self.FK_Action_idVerification">
+            <End Role="Verification" EntitySet="Verification" />
+            <End Role="Action" EntitySet="Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Tache_idAction" Association="Self.FK_Action_Tache_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Action_Tache" EntitySet="Action_Tache" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Detection_idAction" Association="Self.FK_Detection_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Detection" EntitySet="Detection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarie_Action_idAction" Association="Self.FK_Salarie_Action_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Verification_idAction" Association="Self.FK_Verification_idAction">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Verification" EntitySet="Verification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Action_Tache_idTache" Association="Self.FK_Action_Tache_idTache">
+            <End Role="Tache" EntitySet="Tache" />
+            <End Role="Action_Tache" EntitySet="Action_Tache" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reglementation_idCategorie" Association="Self.FK_Reglementation_idCategorie">
+            <End Role="Categorie" EntitySet="Categorie" />
+            <End Role="Reglementation" EntitySet="Reglementation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarie_Action_idSalarie" Association="Self.FK_Salarie_Action_idSalarie">
+            <End Role="QSE" EntitySet="QSE" />
+            <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+          </AssociationSet>
+          <AssociationSet Name="Detection_Reglementation" Association="Self.Detection_Reglementation">
+            <End Role="Action" EntitySet="Action" />
+            <End Role="Reglementation" EntitySet="Reglementation" />
+          </AssociationSet>
+          <AssociationSet Name="Questionnaire" Association="Self.Questionnaire">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="Verification" EntitySet="Verification" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="lapyrModelStoreContainer" CdmEntityContainer="lapyrEntities">
+          <EntitySetMapping Name="Action">
+            <EntityTypeMapping TypeName="lapyrModel.Action">
+              <MappingFragment StoreEntitySet="Action">
+                <ScalarProperty Name="idAction" ColumnName="idAction" />
+                <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+                <ScalarProperty Name="delais" ColumnName="delais" />
+                <ScalarProperty Name="acheve" ColumnName="acheve" />
+                <ScalarProperty Name="numeroImportance" ColumnName="numeroImportance" />
+                <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+                <ScalarProperty Name="pieceJustificative" ColumnName="pieceJustificative" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="recurrence" ColumnName="recurrence" />
+                <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+                <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+                <ScalarProperty Name="idSite" ColumnName="idSite" />
+                <ScalarProperty Name="idAction_1" ColumnName="idAction_1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Action_Tache">
+            <EntityTypeMapping TypeName="lapyrModel.Action_Tache">
+              <MappingFragment StoreEntitySet="Action_Tache">
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="fait" ColumnName="fait" />
+                <ScalarProperty Name="idTache" ColumnName="idTache" />
+                <ScalarProperty Name="idAction" ColumnName="idAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorie">
+            <EntityTypeMapping TypeName="lapyrModel.Categorie">
+              <MappingFragment StoreEntitySet="Categorie">
+                <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Detection">
+            <EntityTypeMapping TypeName="lapyrModel.Detection">
+              <MappingFragment StoreEntitySet="Detection">
+                <ScalarProperty Name="idDetection" ColumnName="idDetection" />
+                <ScalarProperty Name="nomDetection" ColumnName="nomDetection" />
+                <ScalarProperty Name="detailDetection" ColumnName="detailDetection" />
+                <ScalarProperty Name="descriptionAnalyse" ColumnName="descriptionAnalyse" />
+                <ScalarProperty Name="conclusionAnalyse" ColumnName="conclusionAnalyse" />
+                <ScalarProperty Name="idAction" ColumnName="idAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Famille">
+            <EntityTypeMapping TypeName="lapyrModel.Famille">
+              <MappingFragment StoreEntitySet="Famille">
+                <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QSE">
+            <EntityTypeMapping TypeName="lapyrModel.QSE">
+              <MappingFragment StoreEntitySet="QSE">
+                <ScalarProperty Name="idSalarie" ColumnName="idSalarie" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="statutHierarchique" ColumnName="statutHierarchique" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tel" ColumnName="tel" />
+                <ScalarProperty Name="prenom" ColumnName="prenom" />
+                <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+                <ScalarProperty Name="mdp" ColumnName="mdp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question">
+            <EntityTypeMapping TypeName="lapyrModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="idQuestion" ColumnName="idQuestion" />
+                <ScalarProperty Name="question1" ColumnName="question" />
+                <ScalarProperty Name="detail" ColumnName="detail" />
+                <ScalarProperty Name="pointOui" ColumnName="pointOui" />
+                <ScalarProperty Name="pointNon" ColumnName="pointNon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reglementation">
+            <EntityTypeMapping TypeName="lapyrModel.Reglementation">
+              <MappingFragment StoreEntitySet="Reglementation">
+                <ScalarProperty Name="idReglementation" ColumnName="idReglementation" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="lien" ColumnName="lien" />
+                <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salarie_Action">
+            <EntityTypeMapping TypeName="lapyrModel.Salarie_Action">
+              <MappingFragment StoreEntitySet="Salarie_Action">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="idSalarie" ColumnName="idSalarie" />
+                <ScalarProperty Name="idAction" ColumnName="idAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site">
+            <EntityTypeMapping TypeName="lapyrModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="idSite" ColumnName="idSite" />
+                <ScalarProperty Name="nomSite" ColumnName="nomSite" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tache">
+            <EntityTypeMapping TypeName="lapyrModel.Tache">
+              <MappingFragment StoreEntitySet="Tache">
+                <ScalarProperty Name="idTache" ColumnName="idTache" />
+                <ScalarProperty Name="nom" ColumnName="nom" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Verification">
+            <EntityTypeMapping TypeName="lapyrModel.Verification">
+              <MappingFragment StoreEntitySet="Verification">
+                <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+                <ScalarProperty Name="moyenne" ColumnName="moyenne" />
+                <ScalarProperty Name="totalPoint" ColumnName="totalPoint" />
+                <ScalarProperty Name="idAction" ColumnName="idAction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Detection_Reglementation" TypeName="lapyrModel.Detection_Reglementation" StoreEntitySet="Detection_Reglementation">
+            <EndProperty Name="Action">
+              <ScalarProperty Name="idAction" ColumnName="idAction" />
+            </EndProperty>
+            <EndProperty Name="Reglementation">
+              <ScalarProperty Name="idReglementation" ColumnName="idReglementation" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Questionnaire" TypeName="lapyrModel.Questionnaire" StoreEntitySet="Questionnaire">
+            <EndProperty Name="Question">
+              <ScalarProperty Name="idQuestion" ColumnName="idQuestion" />
+            </EndProperty>
+            <EndProperty Name="Verification">
+              <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
