@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LapyrModelStoreContainer" CdmEntityContainer="LapyrEntities">
+    <EntitySetMapping Name="Action_Tache">
+      <EntityTypeMapping TypeName="LapyrModel.Action_Tache">
+        <MappingFragment StoreEntitySet="Action_Tache">
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+          <ScalarProperty Name="idTache" ColumnName="idTache" />
+          <ScalarProperty Name="fait" ColumnName="fait" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ActionQSEs">
+      <EntityTypeMapping TypeName="LapyrModel.ActionQSE">
+        <MappingFragment StoreEntitySet="ActionQSE">
+          <ScalarProperty Name="idAction_1" ColumnName="idAction_1" />
+          <ScalarProperty Name="idSite" ColumnName="idSite" />
+          <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+          <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+          <ScalarProperty Name="recurrence" ColumnName="recurrence" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="pieceJustificative" ColumnName="pieceJustificative" />
+          <ScalarProperty Name="dateFin" ColumnName="dateFin" />
+          <ScalarProperty Name="numeroImportance" ColumnName="numeroImportance" />
+          <ScalarProperty Name="acheve" ColumnName="acheve" />
+          <ScalarProperty Name="delais" ColumnName="delais" />
+          <ScalarProperty Name="dateDebut" ColumnName="dateDebut" />
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="LapyrModel.Categorie">
+        <MappingFragment StoreEntitySet="Categorie">
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detections">
+      <EntityTypeMapping TypeName="LapyrModel.Detection">
+        <MappingFragment StoreEntitySet="Detection">
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+          <ScalarProperty Name="conclusionAnalyse" ColumnName="conclusionAnalyse" />
+          <ScalarProperty Name="descriptionAnalyse" ColumnName="descriptionAnalyse" />
+          <ScalarProperty Name="detailDetection" ColumnName="detailDetection" />
+          <ScalarProperty Name="nomDetection" ColumnName="nomDetection" />
+          <ScalarProperty Name="idDetection" ColumnName="idDetection" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Familles">
+      <EntityTypeMapping TypeName="LapyrModel.Famille">
+        <MappingFragment StoreEntitySet="Famille">
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="idFamille" ColumnName="idFamille" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QSEs">
+      <EntityTypeMapping TypeName="LapyrModel.QSE">
+        <MappingFragment StoreEntitySet="QSE">
+          <ScalarProperty Name="mdp" ColumnName="mdp" />
+          <ScalarProperty Name="identifiant" ColumnName="identifiant" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="statutHierarchique" ColumnName="statutHierarchique" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="idSalarie" ColumnName="idSalarie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="LapyrModel.Question">
+        <MappingFragment StoreEntitySet="Question">
+          <ScalarProperty Name="pointNon" ColumnName="pointNon" />
+          <ScalarProperty Name="pointOui" ColumnName="pointOui" />
+          <ScalarProperty Name="detail" ColumnName="detail" />
+          <ScalarProperty Name="question1" ColumnName="question" />
+          <ScalarProperty Name="idQuestion" ColumnName="idQuestion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reglementations">
+      <EntityTypeMapping TypeName="LapyrModel.Reglementation">
+        <MappingFragment StoreEntitySet="Reglementation">
+          <ScalarProperty Name="idCategorie" ColumnName="idCategorie" />
+          <ScalarProperty Name="lien" ColumnName="lien" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="idReglementation" ColumnName="idReglementation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salarie_Action">
+      <EntityTypeMapping TypeName="LapyrModel.Salarie_Action">
+        <MappingFragment StoreEntitySet="Salarie_Action">
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+          <ScalarProperty Name="idSalarie" ColumnName="idSalarie" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sites">
+      <EntityTypeMapping TypeName="LapyrModel.Site">
+        <MappingFragment StoreEntitySet="Site">
+          <ScalarProperty Name="nomSite" ColumnName="nomSite" />
+          <ScalarProperty Name="idSite" ColumnName="idSite" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taches">
+      <EntityTypeMapping TypeName="LapyrModel.Tache">
+        <MappingFragment StoreEntitySet="Tache">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="idTache" ColumnName="idTache" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Verifications">
+      <EntityTypeMapping TypeName="LapyrModel.Verification">
+        <MappingFragment StoreEntitySet="Verification">
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+          <ScalarProperty Name="totalPoint" ColumnName="totalPoint" />
+          <ScalarProperty Name="moyenne" ColumnName="moyenne" />
+          <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Detection_Reglementation" TypeName="LapyrModel.Detection_Reglementation" StoreEntitySet="Detection_Reglementation">
+      <EndProperty Name="Reglementation">
+        <ScalarProperty Name="idReglementation" ColumnName="idReglementation" />
+      </EndProperty>
+      <EndProperty Name="ActionQSE">
+        <ScalarProperty Name="idAction" ColumnName="idAction" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Questionnaire" TypeName="LapyrModel.Questionnaire" StoreEntitySet="Questionnaire">
+      <EndProperty Name="Verification">
+        <ScalarProperty Name="idVerification" ColumnName="idVerification" />
+      </EndProperty>
+      <EndProperty Name="Question">
+        <ScalarProperty Name="idQuestion" ColumnName="idQuestion" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

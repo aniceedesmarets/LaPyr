@@ -63,6 +63,68 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ModelsSurcharges\ActionQSE.cs" />
+    <Compile Include="Models\ActionQSE.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Action_Tache.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADO.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ADO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ADO.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Categorie.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detection.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Famille.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QSE.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Question.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reglementation.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Salarie_Action.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Site.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tache.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Verification.cs">
+      <DependentUpon>ADO.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ActionEnCoursViewModel.cs" />
+    <Compile Include="ViewModels\ActionsPerUserListViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\ActionView.xaml.cs">
+      <DependentUpon>ActionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListeActionsParUser.xaml.cs">
+      <DependentUpon>ListeActionsParUser.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -75,21 +137,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ActionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListeActionsParUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Action.cs" />
-    <Compile Include="Models\Action_Tache.cs" />
-    <Compile Include="Models\ADO.cs" />
-    <Compile Include="Models\Categorie.cs" />
-    <Compile Include="Models\Detection.cs" />
-    <Compile Include="Models\Famille.cs" />
-    <Compile Include="Models\QSE.cs" />
-    <Compile Include="Models\Question.cs" />
-    <Compile Include="Models\Reglementation.cs" />
-    <Compile Include="Models\Salarie_Action.cs" />
-    <Compile Include="Models\Site.cs" />
-    <Compile Include="Models\Tache.cs" />
-    <Compile Include="Models\Verification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -107,6 +164,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\ADO.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ADO.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\ADO.edmx.diagram">
+      <DependentUpon>ADO.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,8 +181,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
+    <Content Include="Models\ADO.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADO.edmx</DependentUpon>
+      <LastGenOutput>ADO.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ADO.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ADO.edmx</DependentUpon>
+      <LastGenOutput>ADO.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

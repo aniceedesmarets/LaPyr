@@ -17,13 +17,13 @@ namespace LaPyrenenne.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Categorie()
         {
-            this.Reglementation = new HashSet<Reglementation>();
+            this.Reglementations = new HashSet<Reglementation>();
         }
     
         public int idCategorie { get; set; }
         public string nom { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reglementation> Reglementation { get; set; }
+        public virtual ICollection<Reglementation> Reglementations { get; set; }
     }
 }

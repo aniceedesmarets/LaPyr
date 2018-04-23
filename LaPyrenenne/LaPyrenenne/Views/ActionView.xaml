@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="LaPyrenenne.Views.ActionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaPyrenenne.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Text="Famille" />
+        <ComboBox Grid.Column="2" Grid.Row="0" ItemsSource="{Binding ListFamille, Mode=TwoWay}" SelectedValue="{Binding Path=_action.Famille}"></ComboBox>
+        
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Text="Nom" />
+        <TextBox Grid.Column="2" Grid.Row="1" Text = "{Binding NomAction}"></TextBox>
+        
+        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Text="Date début" />
+        <!--<DatePicker Grid.Column="2" Grid.Row="2" SelectedDate="{Binding Path=_action.DateDebut, Mode=TwoWay, TargetNullValue={x:Static System:DateTime.Now}}"></DatePicker>-->        
+        
+        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Text="Délai" />
+        <TextBox Grid.Column="2" Grid.Row="3" Text="{Binding _action.delais}"></TextBox>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" Text="Site" />
+        <ComboBox Grid.Column="2" Grid.Row="4">
+            <ComboBoxItem>
+            </ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" Text="Exécutant" />
+        <ComboBox Grid.Column="2" Grid.Row="5">
+            <ComboBoxItem>
+            </ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" Text="Vérificateur" />
+        <ComboBox Grid.Column="2" Grid.Row="6">
+            <ComboBoxItem>
+            </ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" Text="Récurrence" />
+        <ComboBox Grid.Column="2" Grid.Row="7">
+            <ComboBoxItem>
+            </ComboBoxItem>
+        </ComboBox>
+
+
+
+    </Grid>
+</UserControl>

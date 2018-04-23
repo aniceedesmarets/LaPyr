@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaPyrenenne.Models;
+using LaPyrenenne.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +24,12 @@ namespace LaPyrenenne
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+
+        private void DisplayListActions_Click(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new ActionsPerUserListViewModel();
         }
     }
 }

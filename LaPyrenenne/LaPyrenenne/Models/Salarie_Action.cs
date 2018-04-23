@@ -18,7 +18,7 @@ namespace LaPyrenenne.Models
         public int idSalarie { get; set; }
         public int idAction { get; set; }
     
-        public virtual Action Action { get; set; }
+        public virtual ActionQSE ActionQSE { get; set; }
         public virtual QSE QSE { get; set; }
     }
 }

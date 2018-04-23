@@ -12,17 +12,17 @@ namespace LaPyrenenne.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Action
+    public partial class ActionQSE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Action()
+        public ActionQSE()
         {
-            this.Action1 = new HashSet<Action>();
             this.Action_Tache = new HashSet<Action_Tache>();
-            this.Detection = new HashSet<Detection>();
+            this.ActionQSE1 = new HashSet<ActionQSE>();
+            this.Detections = new HashSet<Detection>();
             this.Salarie_Action = new HashSet<Salarie_Action>();
-            this.Verification1 = new HashSet<Verification>();
-            this.Reglementation = new HashSet<Reglementation>();
+            this.Verifications = new HashSet<Verification>();
+            this.Reglementations = new HashSet<Reglementation>();
         }
     
         public int idAction { get; set; }
@@ -40,20 +40,20 @@ namespace LaPyrenenne.Models
         public Nullable<int> idAction_1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Action1 { get; set; }
-        public virtual Action Action2 { get; set; }
+        public virtual ICollection<Action_Tache> Action_Tache { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ActionQSE> ActionQSE1 { get; set; }
+        public virtual ActionQSE ActionQSE2 { get; set; }
         public virtual Famille Famille { get; set; }
         public virtual Site Site { get; set; }
         public virtual Verification Verification { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action_Tache> Action_Tache { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Detection> Detection { get; set; }
+        public virtual ICollection<Detection> Detections { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Salarie_Action> Salarie_Action { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Verification> Verification1 { get; set; }
+        public virtual ICollection<Verification> Verifications { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reglementation> Reglementation { get; set; }
+        public virtual ICollection<Reglementation> Reglementations { get; set; }
     }
 }

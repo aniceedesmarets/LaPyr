@@ -21,6 +21,6 @@ namespace LaPyrenenne.Models
         public string conclusionAnalyse { get; set; }
         public Nullable<int> idAction { get; set; }
     
-        public virtual Action Action { get; set; }
+        public virtual ActionQSE ActionQSE { get; set; }
     }
 }

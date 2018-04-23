@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fc80116a034d41a5ac8bfa886d20eaed" Name="Diagram1">
+        <EntityTypeShape EntityType="LapyrModel.Action_Tache" Width="1.5" PointX="7.5" PointY="2.75" />
+        <EntityTypeShape EntityType="LapyrModel.ActionQSE" Width="1.5" PointX="5.25" PointY="4.125" />
+        <EntityTypeShape EntityType="LapyrModel.Categorie" Width="1.5" PointX="5.25" PointY="11" />
+        <EntityTypeShape EntityType="LapyrModel.Detection" Width="1.5" PointX="7.5" PointY="14.25" />
+        <EntityTypeShape EntityType="LapyrModel.Famille" Width="1.5" PointX="3" PointY="9.25" />
+        <EntityTypeShape EntityType="LapyrModel.QSE" Width="1.5" PointX="5.25" PointY="13.5" />
+        <EntityTypeShape EntityType="LapyrModel.Question" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LapyrModel.Reglementation" Width="1.5" PointX="7.5" PointY="5.75" />
+        <EntityTypeShape EntityType="LapyrModel.Salarie_Action" Width="1.5" PointX="7.5" PointY="8.875" />
+        <EntityTypeShape EntityType="LapyrModel.Site" Width="1.5" PointX="3" PointY="2.875" />
+        <EntityTypeShape EntityType="LapyrModel.Tache" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="LapyrModel.Verification" Width="1.5" PointX="3" PointY="5.625" />
+        <AssociationConnector Association="LapyrModel.FK_Action_Tache_idAction" />
+        <AssociationConnector Association="LapyrModel.FK_Action_Tache_idTache" />
+        <AssociationConnector Association="LapyrModel.FK_Action_idAction_1" />
+        <AssociationConnector Association="LapyrModel.FK_Action_idFamille" />
+        <AssociationConnector Association="LapyrModel.FK_Action_idSite" />
+        <AssociationConnector Association="LapyrModel.FK_Action_idVerification" />
+        <AssociationConnector Association="LapyrModel.FK_Detection_idAction" />
+        <AssociationConnector Association="LapyrModel.FK_Salarie_Action_idAction" />
+        <AssociationConnector Association="LapyrModel.FK_Verification_idAction" />
+        <AssociationConnector Association="LapyrModel.FK_Reglementation_idCategorie" />
+        <AssociationConnector Association="LapyrModel.FK_Salarie_Action_idSalarie" />
+        <AssociationConnector Association="LapyrModel.Detection_Reglementation" />
+        <AssociationConnector Association="LapyrModel.Questionnaire" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -17,7 +17,7 @@ namespace LaPyrenenne.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Question()
         {
-            this.Verification = new HashSet<Verification>();
+            this.Verifications = new HashSet<Verification>();
         }
     
         public int idQuestion { get; set; }
@@ -27,6 +27,6 @@ namespace LaPyrenenne.Models
         public Nullable<double> pointNon { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Verification> Verification { get; set; }
+        public virtual ICollection<Verification> Verifications { get; set; }
     }
 }

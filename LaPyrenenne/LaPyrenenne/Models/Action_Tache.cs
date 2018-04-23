@@ -19,7 +19,7 @@ namespace LaPyrenenne.Models
         public int idTache { get; set; }
         public int idAction { get; set; }
     
-        public virtual Action Action { get; set; }
+        public virtual ActionQSE ActionQSE { get; set; }
         public virtual Tache Tache { get; set; }
     }
 }

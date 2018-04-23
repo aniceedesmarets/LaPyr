@@ -17,8 +17,8 @@ namespace LaPyrenenne.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Verification()
         {
-            this.Action = new HashSet<Action>();
-            this.Question = new HashSet<Question>();
+            this.ActionQSEs = new HashSet<ActionQSE>();
+            this.Questions = new HashSet<Question>();
         }
     
         public int idVerification { get; set; }
@@ -27,9 +27,9 @@ namespace LaPyrenenne.Models
         public Nullable<int> idAction { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Action> Action { get; set; }
-        public virtual Action Action1 { get; set; }
+        public virtual ICollection<ActionQSE> ActionQSEs { get; set; }
+        public virtual ActionQSE ActionQSE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Question> Question { get; set; }
+        public virtual ICollection<Question> Questions { get; set; }
     }
 }

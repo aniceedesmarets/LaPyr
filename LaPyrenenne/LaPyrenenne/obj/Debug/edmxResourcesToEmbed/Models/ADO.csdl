@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LapyrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LapyrEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Action_Tache" EntityType="LapyrModel.Action_Tache" />
+    <EntitySet Name="ActionQSEs" EntityType="LapyrModel.ActionQSE" />
+    <EntitySet Name="Categories" EntityType="LapyrModel.Categorie" />
+    <EntitySet Name="Detections" EntityType="LapyrModel.Detection" />
+    <EntitySet Name="Familles" EntityType="LapyrModel.Famille" />
+    <EntitySet Name="QSEs" EntityType="LapyrModel.QSE" />
+    <EntitySet Name="Questions" EntityType="LapyrModel.Question" />
+    <EntitySet Name="Reglementations" EntityType="LapyrModel.Reglementation" />
+    <EntitySet Name="Salarie_Action" EntityType="LapyrModel.Salarie_Action" />
+    <EntitySet Name="Sites" EntityType="LapyrModel.Site" />
+    <EntitySet Name="Taches" EntityType="LapyrModel.Tache" />
+    <EntitySet Name="Verifications" EntityType="LapyrModel.Verification" />
+    <AssociationSet Name="FK_Action_Tache_idAction" Association="LapyrModel.FK_Action_Tache_idAction">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="Action_Tache" EntitySet="Action_Tache" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_Tache_idTache" Association="LapyrModel.FK_Action_Tache_idTache">
+      <End Role="Tache" EntitySet="Taches" />
+      <End Role="Action_Tache" EntitySet="Action_Tache" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_idAction_1" Association="LapyrModel.FK_Action_idAction_1">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="ActionQSE1" EntitySet="ActionQSEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_idFamille" Association="LapyrModel.FK_Action_idFamille">
+      <End Role="Famille" EntitySet="Familles" />
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_idSite" Association="LapyrModel.FK_Action_idSite">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Action_idVerification" Association="LapyrModel.FK_Action_idVerification">
+      <End Role="Verification" EntitySet="Verifications" />
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detection_idAction" Association="LapyrModel.FK_Detection_idAction">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="Detection" EntitySet="Detections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salarie_Action_idAction" Association="LapyrModel.FK_Salarie_Action_idAction">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Verification_idAction" Association="LapyrModel.FK_Verification_idAction">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="Verification" EntitySet="Verifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reglementation_idCategorie" Association="LapyrModel.FK_Reglementation_idCategorie">
+      <End Role="Categorie" EntitySet="Categories" />
+      <End Role="Reglementation" EntitySet="Reglementations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salarie_Action_idSalarie" Association="LapyrModel.FK_Salarie_Action_idSalarie">
+      <End Role="QSE" EntitySet="QSEs" />
+      <End Role="Salarie_Action" EntitySet="Salarie_Action" />
+    </AssociationSet>
+    <AssociationSet Name="Detection_Reglementation" Association="LapyrModel.Detection_Reglementation">
+      <End Role="ActionQSE" EntitySet="ActionQSEs" />
+      <End Role="Reglementation" EntitySet="Reglementations" />
+    </AssociationSet>
+    <AssociationSet Name="Questionnaire" Association="LapyrModel.Questionnaire">
+      <End Role="Question" EntitySet="Questions" />
+      <End Role="Verification" EntitySet="Verifications" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Action_Tache">
+    <Key>
+      <PropertyRef Name="idTache" />
+      <PropertyRef Name="idAction" />
+    </Key>
+    <Property Name="detail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="fait" Type="Boolean" />
+    <Property Name="idTache" Type="Int32" Nullable="false" />
+    <Property Name="idAction" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ActionQSE" Relationship="LapyrModel.FK_Action_Tache_idAction" FromRole="Action_Tache" ToRole="ActionQSE" />
+    <NavigationProperty Name="Tache" Relationship="LapyrModel.FK_Action_Tache_idTache" FromRole="Action_Tache" ToRole="Tache" />
+  </EntityType>
+  <EntityType Name="ActionQSE">
+    <Key>
+      <PropertyRef Name="idAction" />
+    </Key>
+    <Property Name="idAction" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dateDebut" Type="DateTime" Precision="3" />
+    <Property Name="delais" Type="Double" />
+    <Property Name="acheve" Type="Double" />
+    <Property Name="numeroImportance" Type="Int32" />
+    <Property Name="dateFin" Type="DateTime" Precision="3" />
+    <Property Name="pieceJustificative" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="recurrence" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="idFamille" Type="Int32" />
+    <Property Name="idVerification" Type="Int32" />
+    <Property Name="idSite" Type="Int32" />
+    <Property Name="idAction_1" Type="Int32" />
+    <NavigationProperty Name="Action_Tache" Relationship="LapyrModel.FK_Action_Tache_idAction" FromRole="ActionQSE" ToRole="Action_Tache" />
+    <NavigationProperty Name="ActionQSE1" Relationship="LapyrModel.FK_Action_idAction_1" FromRole="ActionQSE" ToRole="ActionQSE1" />
+    <NavigationProperty Name="ActionQSE2" Relationship="LapyrModel.FK_Action_idAction_1" FromRole="ActionQSE1" ToRole="ActionQSE" />
+    <NavigationProperty Name="Famille" Relationship="LapyrModel.FK_Action_idFamille" FromRole="ActionQSE" ToRole="Famille" />
+    <NavigationProperty Name="Site" Relationship="LapyrModel.FK_Action_idSite" FromRole="ActionQSE" ToRole="Site" />
+    <NavigationProperty Name="Verification" Relationship="LapyrModel.FK_Action_idVerification" FromRole="ActionQSE" ToRole="Verification" />
+    <NavigationProperty Name="Detections" Relationship="LapyrModel.FK_Detection_idAction" FromRole="ActionQSE" ToRole="Detection" />
+    <NavigationProperty Name="Salarie_Action" Relationship="LapyrModel.FK_Salarie_Action_idAction" FromRole="ActionQSE" ToRole="Salarie_Action" />
+    <NavigationProperty Name="Verifications" Relationship="LapyrModel.FK_Verification_idAction" FromRole="ActionQSE" ToRole="Verification" />
+    <NavigationProperty Name="Reglementations" Relationship="LapyrModel.Detection_Reglementation" FromRole="ActionQSE" ToRole="Reglementation" />
+  </EntityType>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="idCategorie" />
+    </Key>
+    <Property Name="idCategorie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reglementations" Relationship="LapyrModel.FK_Reglementation_idCategorie" FromRole="Categorie" ToRole="Reglementation" />
+  </EntityType>
+  <EntityType Name="Detection">
+    <Key>
+      <PropertyRef Name="idDetection" />
+    </Key>
+    <Property Name="idDetection" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomDetection" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="detailDetection" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="descriptionAnalyse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="conclusionAnalyse" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idAction" Type="Int32" />
+    <NavigationProperty Name="ActionQSE" Relationship="LapyrModel.FK_Detection_idAction" FromRole="Detection" ToRole="ActionQSE" />
+  </EntityType>
+  <EntityType Name="Famille">
+    <Key>
+      <PropertyRef Name="idFamille" />
+    </Key>
+    <Property Name="idFamille" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ActionQSEs" Relationship="LapyrModel.FK_Action_idFamille" FromRole="Famille" ToRole="ActionQSE" />
+  </EntityType>
+  <EntityType Name="QSE">
+    <Key>
+      <PropertyRef Name="idSalarie" />
+    </Key>
+    <Property Name="idSalarie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="statutHierarchique" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tel" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="prenom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="identifiant" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="mdp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Salarie_Action" Relationship="LapyrModel.FK_Salarie_Action_idSalarie" FromRole="QSE" ToRole="Salarie_Action" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="idQuestion" />
+    </Key>
+    <Property Name="idQuestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="question1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="detail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="pointOui" Type="Double" />
+    <Property Name="pointNon" Type="Double" />
+    <NavigationProperty Name="Verifications" Relationship="LapyrModel.Questionnaire" FromRole="Question" ToRole="Verification" />
+  </EntityType>
+  <EntityType Name="Reglementation">
+    <Key>
+      <PropertyRef Name="idReglementation" />
+    </Key>
+    <Property Name="idReglementation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="designation" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="lien" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idCategorie" Type="Int32" />
+    <NavigationProperty Name="Categorie" Relationship="LapyrModel.FK_Reglementation_idCategorie" FromRole="Reglementation" ToRole="Categorie" />
+    <NavigationProperty Name="ActionQSEs" Relationship="LapyrModel.Detection_Reglementation" FromRole="Reglementation" ToRole="ActionQSE" />
+  </EntityType>
+  <EntityType Name="Salarie_Action">
+    <Key>
+      <PropertyRef Name="idSalarie" />
+      <PropertyRef Name="idAction" />
+    </Key>
+    <Property Name="type" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="idSalarie" Type="Int32" Nullable="false" />
+    <Property Name="idAction" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ActionQSE" Relationship="LapyrModel.FK_Salarie_Action_idAction" FromRole="Salarie_Action" ToRole="ActionQSE" />
+    <NavigationProperty Name="QSE" Relationship="LapyrModel.FK_Salarie_Action_idSalarie" FromRole="Salarie_Action" ToRole="QSE" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="idSite" />
+    </Key>
+    <Property Name="idSite" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomSite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ActionQSEs" Relationship="LapyrModel.FK_Action_idSite" FromRole="Site" ToRole="ActionQSE" />
+  </EntityType>
+  <EntityType Name="Tache">
+    <Key>
+      <PropertyRef Name="idTache" />
+    </Key>
+    <Property Name="idTache" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Action_Tache" Relationship="LapyrModel.FK_Action_Tache_idTache" FromRole="Tache" ToRole="Action_Tache" />
+  </EntityType>
+  <EntityType Name="Verification">
+    <Key>
+      <PropertyRef Name="idVerification" />
+    </Key>
+    <Property Name="idVerification" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="moyenne" Type="Double" />
+    <Property Name="totalPoint" Type="Double" />
+    <Property Name="idAction" Type="Int32" />
+    <NavigationProperty Name="ActionQSEs" Relationship="LapyrModel.FK_Action_idVerification" FromRole="Verification" ToRole="ActionQSE" />
+    <NavigationProperty Name="ActionQSE" Relationship="LapyrModel.FK_Verification_idAction" FromRole="Verification" ToRole="ActionQSE" />
+    <NavigationProperty Name="Questions" Relationship="LapyrModel.Questionnaire" FromRole="Verification" ToRole="Question" />
+  </EntityType>
+  <Association Name="FK_Action_Tache_idAction">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="1" />
+    <End Type="LapyrModel.Action_Tache" Role="Action_Tache" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionQSE">
+        <PropertyRef Name="idAction" />
+      </Principal>
+      <Dependent Role="Action_Tache">
+        <PropertyRef Name="idAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_Tache_idTache">
+    <End Type="LapyrModel.Tache" Role="Tache" Multiplicity="1" />
+    <End Type="LapyrModel.Action_Tache" Role="Action_Tache" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tache">
+        <PropertyRef Name="idTache" />
+      </Principal>
+      <Dependent Role="Action_Tache">
+        <PropertyRef Name="idTache" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_idAction_1">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="0..1" />
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionQSE">
+        <PropertyRef Name="idAction" />
+      </Principal>
+      <Dependent Role="ActionQSE1">
+        <PropertyRef Name="idAction_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_idFamille">
+    <End Type="LapyrModel.Famille" Role="Famille" Multiplicity="0..1" />
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Famille">
+        <PropertyRef Name="idFamille" />
+      </Principal>
+      <Dependent Role="ActionQSE">
+        <PropertyRef Name="idFamille" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_idSite">
+    <End Type="LapyrModel.Site" Role="Site" Multiplicity="0..1" />
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="idSite" />
+      </Principal>
+      <Dependent Role="ActionQSE">
+        <PropertyRef Name="idSite" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Action_idVerification">
+    <End Type="LapyrModel.Verification" Role="Verification" Multiplicity="0..1" />
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Verification">
+        <PropertyRef Name="idVerification" />
+      </Principal>
+      <Dependent Role="ActionQSE">
+        <PropertyRef Name="idVerification" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detection_idAction">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="0..1" />
+    <End Type="LapyrModel.Detection" Role="Detection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionQSE">
+        <PropertyRef Name="idAction" />
+      </Principal>
+      <Dependent Role="Detection">
+        <PropertyRef Name="idAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salarie_Action_idAction">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="1" />
+    <End Type="LapyrModel.Salarie_Action" Role="Salarie_Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionQSE">
+        <PropertyRef Name="idAction" />
+      </Principal>
+      <Dependent Role="Salarie_Action">
+        <PropertyRef Name="idAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Verification_idAction">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="0..1" />
+    <End Type="LapyrModel.Verification" Role="Verification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ActionQSE">
+        <PropertyRef Name="idAction" />
+      </Principal>
+      <Dependent Role="Verification">
+        <PropertyRef Name="idAction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reglementation_idCategorie">
+    <End Type="LapyrModel.Categorie" Role="Categorie" Multiplicity="0..1" />
+    <End Type="LapyrModel.Reglementation" Role="Reglementation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="idCategorie" />
+      </Principal>
+      <Dependent Role="Reglementation">
+        <PropertyRef Name="idCategorie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salarie_Action_idSalarie">
+    <End Type="LapyrModel.QSE" Role="QSE" Multiplicity="1" />
+    <End Type="LapyrModel.Salarie_Action" Role="Salarie_Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QSE">
+        <PropertyRef Name="idSalarie" />
+      </Principal>
+      <Dependent Role="Salarie_Action">
+        <PropertyRef Name="idSalarie" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Detection_Reglementation">
+    <End Type="LapyrModel.ActionQSE" Role="ActionQSE" Multiplicity="*" />
+    <End Type="LapyrModel.Reglementation" Role="Reglementation" Multiplicity="*" />
+  </Association>
+  <Association Name="Questionnaire">
+    <End Type="LapyrModel.Question" Role="Question" Multiplicity="*" />
+    <End Type="LapyrModel.Verification" Role="Verification" Multiplicity="*" />
+  </Association>
+</Schema>

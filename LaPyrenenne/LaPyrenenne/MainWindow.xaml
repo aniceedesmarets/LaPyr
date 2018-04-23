@@ -1,4 +1,4 @@
-﻿<Window x:Class="LaPyrenenne.MainWindow"
+﻿<Window xmlns:Views="clr-namespace:LaPyrenenne.Views"  x:Class="LaPyrenenne.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <!--<RowDefinition Height="*" />-->
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+        </Grid.ColumnDefinitions>
+
+        <Menu Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem Header="Règlementations"/>
+            <MenuItem Header="Actions">
+                <MenuItem Header="Ma liste d'actions 'créées'" Click="DisplayListActions_Click"/>
+                <MenuItem Header="Ma liste d'actions à 'éxécuter'"/>
+                <MenuItem Header="Ma liste d'actions à 'vérifier'"/>
+            </MenuItem>            
+            <MenuItem Header="Bonjour QSE, Nom/Prenom"/>
+        </Menu>
+
+        <Views:ListeActionsParUser x:Name="workZone" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+
+        <!--<Views:ActionView x:Name="actionEnCours" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>-->
+
     </Grid>
 </Window>
