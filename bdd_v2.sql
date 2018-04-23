@@ -4,9 +4,9 @@
 
 
 /*------------------------------------------------------------
--- Table: Action
+-- Table: ActionQSE
 ------------------------------------------------------------*/
-CREATE TABLE Action(
+CREATE TABLE ActionQSE(
 	idAction           INT IDENTITY (1,1) NOT NULL ,
 	dateDebut          DATETIME  ,
 	delais             FLOAT   ,
@@ -20,7 +20,7 @@ CREATE TABLE Action(
 	idVerification     INT   ,
 	idSite             INT   ,
 	idAction_1         INT   ,
-	CONSTRAINT prk_constraint_Action PRIMARY KEY NONCLUSTERED (idAction)
+	CONSTRAINT prk_constraint_ActionQSE PRIMARY KEY NONCLUSTERED (idAction)
 );
 
 
@@ -176,18 +176,18 @@ CREATE TABLE Salarie_Action(
 
 
 
-ALTER TABLE Action ADD CONSTRAINT FK_Action_idFamille FOREIGN KEY (idFamille) REFERENCES Famille(idFamille);
-ALTER TABLE Action ADD CONSTRAINT FK_Action_idVerification FOREIGN KEY (idVerification) REFERENCES Verification(idVerification);
-ALTER TABLE Action ADD CONSTRAINT FK_Action_idSite FOREIGN KEY (idSite) REFERENCES Site(idSite);
-ALTER TABLE Action ADD CONSTRAINT FK_Action_idAction_1 FOREIGN KEY (idAction_1) REFERENCES Action(idAction);
-ALTER TABLE Detection ADD CONSTRAINT FK_Detection_idAction FOREIGN KEY (idAction) REFERENCES Action(idAction);
+ALTER TABLE ActionQSE ADD CONSTRAINT FK_ActionQSE_idFamille FOREIGN KEY (idFamille) REFERENCES Famille(idFamille);
+ALTER TABLE ActionQSE ADD CONSTRAINT FK_ActionQSE_idVerification FOREIGN KEY (idVerification) REFERENCES Verification(idVerification);
+ALTER TABLE ActionQSE ADD CONSTRAINT FK_ActionQSE_idSite FOREIGN KEY (idSite) REFERENCES Site(idSite);
+ALTER TABLE ActionQSE ADD CONSTRAINT FK_ActionQSE_idAction_1 FOREIGN KEY (idAction_1) REFERENCES ActionQSE(idAction);
+ALTER TABLE Detection ADD CONSTRAINT FK_Detection_idAction FOREIGN KEY (idAction) REFERENCES ActionQSE(idAction);
 ALTER TABLE Reglementation ADD CONSTRAINT FK_Reglementation_idCategorie FOREIGN KEY (idCategorie) REFERENCES Categorie(idCategorie);
-ALTER TABLE Verification ADD CONSTRAINT FK_Verification_idAction FOREIGN KEY (idAction) REFERENCES Action(idAction);
+ALTER TABLE Verification ADD CONSTRAINT FK_Verification_idAction FOREIGN KEY (idAction) REFERENCES ActionQSE(idAction);
 ALTER TABLE Detection_Reglementation ADD CONSTRAINT FK_Detection_Reglementation_idReglementation FOREIGN KEY (idReglementation) REFERENCES Reglementation(idReglementation);
-ALTER TABLE Detection_Reglementation ADD CONSTRAINT FK_Detection_Reglementation_idAction FOREIGN KEY (idAction) REFERENCES Action(idAction);
+ALTER TABLE Detection_Reglementation ADD CONSTRAINT FK_Detection_Reglementation_idAction FOREIGN KEY (idAction) REFERENCES ActionQSE(idAction);
 ALTER TABLE Action_Tache ADD CONSTRAINT FK_Action_Tache_idTache FOREIGN KEY (idTache) REFERENCES Tache(idTache);
-ALTER TABLE Action_Tache ADD CONSTRAINT FK_Action_Tache_idAction FOREIGN KEY (idAction) REFERENCES Action(idAction);
+ALTER TABLE Action_Tache ADD CONSTRAINT FK_Action_Tache_idAction FOREIGN KEY (idAction) REFERENCES ActionQSE(idAction);
 ALTER TABLE Questionnaire ADD CONSTRAINT FK_Questionnaire_idVerification FOREIGN KEY (idVerification) REFERENCES Verification(idVerification);
 ALTER TABLE Questionnaire ADD CONSTRAINT FK_Questionnaire_idQuestion FOREIGN KEY (idQuestion) REFERENCES Question(idQuestion);
 ALTER TABLE Salarie_Action ADD CONSTRAINT FK_Salarie_Action_idSalarie FOREIGN KEY (idSalarie) REFERENCES QSE(idSalarie);
-ALTER TABLE Salarie_Action ADD CONSTRAINT FK_Salarie_Action_idAction FOREIGN KEY (idAction) REFERENCES Action(idAction);
+ALTER TABLE Salarie_Action ADD CONSTRAINT FK_Salarie_Action_idAction FOREIGN KEY (idAction) REFERENCES ActionQSE(idAction);
