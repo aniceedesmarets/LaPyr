@@ -8,9 +8,8 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <!--<RowDefinition Height="*" />-->
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -29,7 +28,9 @@
             <MenuItem Header="Bonjour QSE, Nom/Prenom"/>
         </Menu>
 
-        <Views:ListeActionsParUser x:Name="workZone" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <ContentControl x:Name="contentControl" Grid.Row="1" Grid.Column="1"></ContentControl>
+        
+        <!--<Views:ListeActionsParUser x:Name="workZone" Grid.Row="1" Grid.Column="1"/>-->
 
         <!--<Views:ActionView x:Name="actionEnCours" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>-->
 

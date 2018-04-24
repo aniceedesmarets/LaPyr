@@ -1,5 +1,6 @@
 ﻿using LaPyrenenne.Models;
 using LaPyrenenne.ViewModels;
+using LaPyrenenne.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,10 @@ namespace LaPyrenenne
 
         private void DisplayListActions_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new ActionsPerUserListViewModel();
+            ListeActionsParUser listActionView = new ListeActionsParUser();
+            listActionView.DataContext = new ActionsPerUserListViewModel();
+
+            this.contentControl.Content = listActionView;
         }
     }
 }
