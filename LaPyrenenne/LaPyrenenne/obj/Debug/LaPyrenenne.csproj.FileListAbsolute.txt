@@ -67,3 +67,29 @@ C:\Users\rmagn\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csproj.Genera
 C:\Users\rmagn\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csproj.CoreCompileInputs.cache
 C:\Users\rmagn\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.exe
 C:\Users\rmagn\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.pdb
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\LaPyrenenne.exe.config
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\LaPyrenenne.exe
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\LaPyrenenne.pdb
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\EntityFramework.dll
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\EntityFramework.xml
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csprojResolveAssemblyReference.cache
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\MainWindow.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\ActionView.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\ListeActionsParUser.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\App.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne_Content.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne_MarkupCompile.cache
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne_MarkupCompile.lref
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\MainWindow.baml
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\ActionView.baml
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\ListeActionsParUser.baml
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.g.resources
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.Properties.Resources.resources
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csproj.GenerateResource.Cache
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csproj.CoreCompileInputs.cache
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.exe
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.pdb
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\PageReglementation.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\PageReglementation.baml
