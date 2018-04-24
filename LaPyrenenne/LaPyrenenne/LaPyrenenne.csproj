@@ -127,6 +127,9 @@
     <Compile Include="Views\ListeActionsParUser.xaml.cs">
       <DependentUpon>ListeActionsParUser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Reglementation\ListeReglementationView.xaml.cs">
+      <DependentUpon>ListeReglementationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Reglementation\PageReglementation.xaml.cs">
       <DependentUpon>PageReglementation.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ListeActionsParUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reglementation\ListeReglementationView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

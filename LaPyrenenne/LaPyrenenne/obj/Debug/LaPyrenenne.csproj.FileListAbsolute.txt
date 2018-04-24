@@ -99,3 +99,5 @@ C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaP
 C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.csproj.CoreCompileInputs.cache
 C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.exe
 C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\LaPyrenenne.pdb
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\Reglementation\ListeReglementationView.g.cs
+C:\Users\adesmarets\Documents\CESI\28 - ASP NET ADO NET\PROJET ASP NET\LaPyr\LaPyrenenne\LaPyrenenne\obj\Debug\Views\Reglementation\ListeReglementationView.baml

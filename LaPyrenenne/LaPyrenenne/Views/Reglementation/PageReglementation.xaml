@@ -9,7 +9,6 @@
 
 
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
@@ -32,6 +31,7 @@
         </Grid>
 
         <local:RechercheReglementationView x:Name="recherche" Grid.Row="1" Grid.Column="1" />
+        <local:ListeReglementationView x:Name="liste" Grid.Row="3" Grid.Column="1"/>
     </Grid>
 
 </UserControl>
