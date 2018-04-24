@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Menu Grid.Row="0" Grid.ColumnSpan="3">
-            <MenuItem Header="Règlementations"/>
+            <MenuItem Header="Règlementations" Click="DisplayReglementation_Click"/>
             <MenuItem Header="Actions">
                 <MenuItem Header="Ma liste d'actions 'créées'" Click="DisplayListActions_Click"/>
                 <MenuItem Header="Ma liste d'actions à 'éxécuter'"/>
