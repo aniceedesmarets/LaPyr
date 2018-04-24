@@ -11,11 +11,11 @@ namespace LaPyrenenne.ViewModels
     class ActionEnCoursViewModel : ViewModelBase
     {
         // CONSTRUCTEUR DU CONTROLEUR AVEC L'ENTITE A CONTROLER
-        private ActionQSE _action;
+        private ActionQSE ActionQSE;
 
-        public ActionEnCoursViewModel(ActionQSE action)
+        public ActionEnCoursViewModel(ActionQSE _action)
         {
-            _action = action;
+            this.ActionQSE = _action;
         }
 
         // PROPRIETE SUR L'ENTITE CONTROLEE
@@ -23,27 +23,10 @@ namespace LaPyrenenne.ViewModels
         {
             get
             {
-                return _action;
+                return ActionQSE;
             }
         }
-
-
-        // PROPRIETES ETENDUES OU CONTROLEES
-
-        public string NomAction
-        {
-            get { return _action.nom; }
-            set
-            {
-                //if (_action.nom != value)
-                //{
-                //    _action.nom = value;
-                //    NotifyPropertyChanged();
-                //    NotifyPropertyChanged("PrenomNom");
-                //}
-            }
-        }
-
+        
         #region Save Action
         /**** COMMAND SAVE NOUVEAU CLIENT ****/
         private RelayCommand _CommandeSave;

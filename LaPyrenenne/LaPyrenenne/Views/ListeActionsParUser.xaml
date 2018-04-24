@@ -54,13 +54,13 @@
 
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text = "{Binding idAction}"/>
-                        <TextBlock Grid.Column="1" Text = "{Binding NomAction}"/>
-                        <TextBlock Grid.Column="2" Text = "{Binding Action.DateDebut}"/>
-                        <TextBlock Grid.Column="3" Text = "{Binding dateFin}"/>
-                        <TextBlock Grid.Column="4" Text = "{Binding Site}"/>
-                        <TextBlock Grid.Column="5" Text = "{Binding Salarie_Action}"/>
-                        <TextBlock Grid.Column="6" Text = "{Binding Verifications}"/>
+                        <TextBlock Grid.Column="0" Text = "{Binding ActionQSE.idAction}"/>
+                        <TextBlock Grid.Column="1" Text = "{Binding ActionQSE.nom}"/>
+                        <TextBlock Grid.Column="2" Text = "{Binding ActionQSE.DateDebut}"/>
+                        <TextBlock Grid.Column="3" Text = "{Binding ActionQSE.dateFin}"/>
+                        <TextBlock Grid.Column="4" Text = "{Binding ActionQSE.Site.nomSite}"/>
+                        <TextBlock Grid.Column="5" Text = "{Binding ActionQSE.Salarie_Action}"/>
+                        <TextBlock Grid.Column="6" Text = "{Binding ActionQSE.Verifications}"/>
 
                         <Button Grid.Column="7">Editer</Button>
                     </Grid>

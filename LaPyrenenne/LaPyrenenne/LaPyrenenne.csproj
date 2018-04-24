@@ -117,7 +117,6 @@
     </Compile>
     <Compile Include="ViewModels\ActionEnCoursViewModel.cs" />
     <Compile Include="ViewModels\ActionsPerUserListViewModel.cs" />
-    <Compile Include="ViewModels\ActionsReglementationViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\ActionView.xaml.cs">
@@ -125,9 +124,6 @@
     </Compile>
     <Compile Include="Views\ListeActionsParUser.xaml.cs">
       <DependentUpon>ListeActionsParUser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PageReglementation.xaml.cs">
-      <DependentUpon>PageReglementation.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -146,10 +142,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ListeActionsParUser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\PageReglementation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

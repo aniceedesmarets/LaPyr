@@ -31,17 +31,9 @@ namespace LaPyrenenne
         private void DisplayListActions_Click(object sender, RoutedEventArgs e)
         {
             ListeActionsParUser listActionView = new ListeActionsParUser();
-            listActionView.DataContext = new ActionsPerUserListViewModel();
+            listActionView.DataContext = new ActionsPerUserListViewModel("CREATEUR");
 
             this.contentControl.Content = listActionView;
-        }
-
-        private void DisplayReglementation_Click(object sender, RoutedEventArgs e)
-        {
-            PageReglementation pageReglementationView = new PageReglementation();
-            pageReglementationView.DataContext = new ActionsReglementationViewModel();
-
-            this.contentControl.Content = pageReglementationView;
         }
     }
 }

@@ -23,10 +23,10 @@ namespace LaPyrenenne.ViewModels
         //public int NbItemsCharges { get; set; } = 0;
 
 
-        public ActionsPerUserListViewModel()
+        public ActionsPerUserListViewModel(string role)
         {
             //ClientServer clientServer = ClientServer.GetMyInstance();
-            BuildList();
+            BuildList(role);
 
             //Définition de la collection view
             _collectionView = CollectionViewSource.GetDefaultView(_listeActionsParUser);
@@ -43,15 +43,15 @@ namespace LaPyrenenne.ViewModels
             //ClientViewModel.EventCommandDelete += DeleteClient;
         }
 
-        public void BuildList()
+        public void BuildList(string role)
         {
             using (LapyrEntities dataAccess = new LapyrEntities())
             {
-                //Recup des ID actions rattachées au USER de l'appli via la table d'association "Salarie_Action"
-                _listSalarie_Action = dataAccess.Salarie_Action.Where(sa => sa.idSalarie == 1).ToList();
-
+                //Recup des ID actions rattachées au USER de l'appli via la table d'association "Salarie_Action", ou il tient le role de créateur
+                _listSalarie_Action = dataAccess.Salarie_Action.Where(sa => sa.idSalarie == 1 && sa.type.Equals(role)).ToList();
+                
                 //Pour chaque id de'actions attachées au USER, on recup l'action en elle-meme
-                foreach(Salarie_Action item in _listSalarie_Action)
+                foreach (Salarie_Action item in _listSalarie_Action)
                 {
                     _listActionQSE = dataAccess.ActionQSEs.Where(a => a.idAction == item.idAction).ToList();
                 }
