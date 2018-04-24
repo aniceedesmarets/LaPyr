@@ -1,6 +1,8 @@
 ﻿using LaPyrenenne.Models;
 using LaPyrenenne.ViewModels;
+using LaPyrenenne.ViewModels.Reglementation;
 using LaPyrenenne.Views;
+using LaPyrenenne.Views.Reglementation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,14 @@ namespace LaPyrenenne
             listActionView.DataContext = new ActionsPerUserListViewModel("CREATEUR");
 
             this.contentControl.Content = listActionView;
+        }
+
+        private void DisplayReglementation_Click(object sender, RoutedEventArgs e)
+        {
+            PageReglementation pageReglementationView = new PageReglementation();
+            pageReglementationView.DataContext = new ActionsReglementationViewModel();
+
+            this.contentControl.Content = pageReglementationView;
         }
     }
 }
